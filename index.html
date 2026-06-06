@@ -1,217 +1,368 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ulindu Eshan Samaradheera - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulindu Esahan Samaradheera - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #4db8ff;
+        }
+        
+        /* Top Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #4db8ff;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        /* Sections */
+        section {
+            padding: 100px 20px 60px;
+            max-width: 1000px;
+            margin: auto;
+            border-bottom: 1px solid #333;
+        }
+        h2.section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4db8ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h3 {
+            color: #e0e0e0;
+            border-left: 4px solid #4db8ff;
+            padding-left: 10px;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-chart-bar"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Ulindu Samaradheera</h1>
-								<p>BSc Applied Sciences Undergraduate at Rajarata University of Sri Lanka.<br />
-								Passionate about Mathematics, Statistics, Data Analysis, and Machine Learning.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Projects</a></li>
-								<li><a href="#about">Skills</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-						</nav>
-					</header>
+        /* Cards & Containers */
+        .card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
 
-				<!-- Main -->
-					<div id="main">
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: #4db8ff;
+            color: #121212;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background: #3aa1e5;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #4db8ff;
+            color: #4db8ff;
+        }
+        .btn-outline:hover {
+            background: #4db8ff;
+            color: #121212;
+        }
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg.jpeg" alt="Ulindu Samaradheera" style="border-radius: 50%; aspect-ratio: 1/1; object-fit: cover;" /></span>
-								<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>About Me</h2>
-										</header>
-										<p>As a final-year BSc Applied Sciences undergraduate specializing in Mathematics, Statistics, and Chemistry, I thrive at the intersection of data, research, and education. I possess a strong quantitative foundation with hands-on research experience in solving complex analytical problems.</p>
-										
-										<p><strong>My core expertise includes:</strong></p>
-										<ul>
-											<li><strong>Statistical Modeling:</strong> Time series forecasting, network analysis, and machine learning.</li>
-											<li><strong>Programming:</strong> Proficient in R, Python, and MATLAB.</li>
-											<li><strong>Application:</strong> Translating complex mathematical models into practical, real-world solutions.</li>
-										</ul>
-										
-										<p>Beyond data and coding, I am a dedicated educator and a community leader with a proven track record of driving positive impact. I am eager to contribute to impactful academic research and advanced statistical studies. Let's connect!</p>
-					
-								</div>
-							</section>
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .skill-item {
+            background: #1e1e1e;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: 600;
+        }
 
+        /* Contact Buttons Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        /* Specific Button Colors */
+        .bg-whatsapp { background: #25D366; }
+        .bg-phone { background: #34b7f1; }
+        .bg-map { background: #EA4335; }
+        .bg-fb { background: #1877F2; }
+        .bg-insta { background: #E4405F; }
+        .bg-linkedin { background: #0A66C2; }
+        .bg-x { background: #000000; border: 1px solid #333; }
+        .bg-github { background: #333; }
+        .bg-cv { background: #ff9800; }
+        
+        .contact-btn:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            color: #fff;
+        }
 
-								<hr />
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 10px;
+            }
+            nav ul li a {
+                font-size: 12px;
+            }
+            header {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
 
-<h3 class="major">References</h3>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; text-align: left;">
-	<div style="flex: 1; min-width: 250px;">
-		<h4>Dr. Himasha Warnakulasooriya</h4>
-		<p style="margin-bottom: 0;">Postdoctoral Research Fellow,<br>
-		UNSW, Australia.<br>
-		<strong>Mobile:</strong> +61 416351458<br>
-		<strong>Email:</strong> <a href="mailto:himashaharshani635@gmail.com">himashaharshani635@gmail.com</a></p>
-	</div>
-	<div style="flex: 1; min-width: 250px;">
-		<h4>P. G. N. Dhanushka</h4>
-		<p style="margin-bottom: 0;">Medical Officer<br>
-		No 6/2, Jayamawatha,<br>
-		Dangollawaththa, Nittabuwa.<br>
-		<strong>Mobile:</strong> +94 0718619717<br>
-		<strong>Email:</strong> <a href="mailto:nayanidhanushka088@gmail.com">nayanidhanushka088@gmail.com</a></p>
-	</div>
-</div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#activity">Activity</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#reference">Reference</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div style="margin-top: 3em; padding: 1.5em; background: rgba(0,0,0,0.2); border-left: 4px solid #ffffff; text-align: left;">
-	
-	<strong>Ulindu Eshan Samaradheera</strong><br>
-	<span style="font-size: 0.9em;">(BSc Applied Sciences)</span>
-</div>
-							</article>
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card" style="text-align: center;">
+            <img src="images/pic01.jpg.jpeg" alt="Ulindu Samaradheera" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid #4db8ff; margin-bottom: 20px;">
+            <h1 style="margin: 0; color: #fff;">Ulindu Esahan Samaradheera</h1>
+            <p style="color: #bbb; font-size: 18px;">BSc (Applied Sciences) Undergraduate | Rajarata University of Sri Lanka</p>
+            <p style="text-align: justify; margin-top: 20px;">
+                Analytical and highly motivated final-year BSc Applied Sciences undergraduate specializing in Mathematics, Statistics, and Chemistry. Possesses a strong quantitative foundation with hands-on research experience in time series forecasting, network analysis, and machine learning. A dedicated educator and researcher with a proven track record of community leadership, eager to contribute to impactful academic research and advanced statistical studies.
+            </p>
+            <a href="UE Samaradheera - My Resume.pdf" download class="btn bg-cv"><i class="fas fa-file-download"></i> Download CV</a>
+        </div>
+    </section>
 
-						<!-- Work (Projects & Experience) -->
-							<article id="work">
-								<h2 class="major">Experience & Projects</h2>
-								<span class="image main"><img src="images/pic02.jpg.png" alt="Projects" /></span>
-								
-								<h3 class="major">Research & Academic Projects</h3>
-								<h4>Final Year Statistics Research Project</h4>
-								<p>Modeling and Forecasting Rainfall Patterns using Nonlinear Autoregressive (NAR), Nonlinear Autoregressive Exogenous (NARX), and Autoregressive Integrated Moving Average (ARIMA) Models with Logarithmic Transformation, Handling Non-linear Data and Hydrological Forecasting with Climate Data Analysis.</p>
-								
-								<h4>Undergraduate Mathematics Research Project</h4>
-								<p>Evaluating the Impact of Synthetic Bridge Nodes on the Structural Recovery of Social Networks using Graph Theory, Network Resilience Simulation, and Social Media Analytics.</p>
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="card">
+            <h3>B.Sc. in Applied Sciences (2020 - 2026)</h3>
+            <p><strong>Rajarata University of Sri Lanka</strong> | Faculty of Applied Sciences<br>
+            Specializing in Mathematics, Statistics, and Chemistry.</p>
+        </div>
 
-								<h4>Statistics Group Project</h4>
-								<p>Automated Disease Detection System for Common Sri Lankan Crops Using Deep Learning and Convolutional Neural Networks (CNN) with Image Classification and Pattern Recognition.</p>
+        <div class="card">
+            <h3>School Education</h3>
+            <p><strong>G.C.E. Advanced Level (2020)</strong> - Pannipitiya Dharmapala Vidyalaya (Physical Sciences Stream)</p>
+            <p><strong>G.C.E. Ordinary Level (2017)</strong> - Homagama Central College</p>
+        </div>
 
-								<h3 class="major">Work Experience</h3>
-								<h4>Volunteer Mathematics Teacher</h4>
-								<p><strong>Sasnaka Sansada (Ganitha Saviya Program) | Sep 2022 - Present</strong><br/>
-								Mentored over 1,000 G.C.E. (O/L) students across 35+ government schools through targeted problem-solving sessions, contributing to a 10% average increase in school-wide mathematics pass rates.</p>
+        <div class="card">
+            <h3>Certifications</h3>
+            <ul>
+                <li>Certificate of Completion (English Language) - Technical College Homagama (NVQ-4) (2020)
+                    <br><a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View Certificate</a>
+                </li>
+                <li style="margin-top: 15px;">Certificate of Completion (English Language) - B.A.E. Institute Puwakpitiya (2022/2023)
+                    <br><a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View Certificate</a>
+                </li>
+                <li style="margin-top: 15px;">50h Cambridge Course - Institute of English Homagama (2015)
+                    <br><a href="#" class="btn btn-outline"><i class="fas fa-eye"></i> View Certificate</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-								<h4>Career Guidance Mentor</h4>
-								<p><strong>Sasnaka Sansada & USAID | 2022</strong><br/>
-								Provided strategic career and academic guidance to over 1,000 students, assisting them in identifying and planning appropriate future career pathways.</p>
-							</article>
+    <section id="research">
+        <h2 class="section-title">Research Projects</h2>
+        
+        <div class="card">
+            <h3>Final Year Statistics Research Project</h3>
+            <p>Modeling and Forecasting Rainfall Patterns using Nonlinear Autoregressive (NAR), Nonlinear Autoregressive Exogenous (NARX), and Autoregressive Integrated Moving Average (ARIMA) Models with Logarithmic Transformation, Handling Non-linear Data, and Hydrological Forecasting with Climate Data Analysis.</p>
+        </div>
 
-						<!-- About (Education & Skills) -->
-							<article id="about">
-								<h2 class="major">Education & Skills</h2>
-								<span class="image main"><img src="images/pic03.jpg.jpeg" alt="Education" /></span>
-								
-								<h3 class="major">Education</h3>
-								<p><strong>B.Sc. in Applied Sciences (2020-2026)</strong><br />
-								Rajarata University of Sri Lanka | Faculty of Applied Sciences<br />
-								Specializing in Mathematics, Statistics, and Chemistry.</p>
+        <div class="card">
+            <h3>Undergraduate Maths Research Project</h3>
+            <p>Evaluating the Impact of Synthetic Bridge Nodes on the Structural Recovery of Social Networks using Graph Theory, Network Resilience Simulation, and Social Media Analytics.</p>
+        </div>
 
-								<p><strong>G.C.E. Advanced Level (2020)</strong><br />
-								Pannipitiya Dharmapala Vidyalaya | Physical Sciences Stream</p>
+        <div class="card">
+            <h3>Statistics Group Project</h3>
+            <p>Automated Disease Detection System for Common Sri Lankan Crops Using Deep Learning and Convolutional Neural Networks (CNN) with Image Classification and Pattern Recognition.</p>
+        </div>
+    </section>
 
-								<h3 class="major">Technical Tools & Skills</h3>
-								<ul>
-									<li><strong>Programming:</strong> R Studio, Python, MATLAB</li>
-									<li><strong>Core Competencies:</strong> Data Analysis, Machine Learning, Time Series Forecasting, Mathematical Modeling</li>
-									<li><strong>Soft Skills:</strong> Critical Thinking, Leadership, Adaptability, Teamwork</li>
-								</ul>
+    <section id="work">
+        <h2 class="section-title">Work Experience</h2>
 
-								<h3 class="major">Leadership & Extracurriculars</h3>
-<ul>
-	<li><strong>Student Executive (Action) Committee Member:</strong> Students Union of Rajarata University of Sri Lanka, Faculty of Applied Sciences (2023 - 2026)</li>
-	<li><strong>Volunteer Member:</strong> Sasnaka Sansada Foundation (2022 - Present)</li>
-	<li><strong>Chief Coordinator and Chief Executive Officer:</strong> Faculty of Applied Sciences Exhibition FAS explorer 2025, Department of Physical Science</li>
-	<li><strong>Member:</strong> Industrial Mathematics Students’ Association, RUSL (2023 - 2026)</li>
-	<li><strong>Member:</strong> NextGen Chemists Students’ Association, RUSL (2024 - 2026)</li>
-	<li><strong>Member:</strong> IEEE Student Branch, RUSL (2023 - 2024)</li>
-	<li><strong>Speaker:</strong> IEEE Career Compass Sessions, Rajarata University of Sri Lanka, 2025</li>
-	<li><strong>Active Participant:</strong> Sri Lanka Scout Association events and leadership roles (2014 - 2017)</li>
-	<li><strong>Sports (Elle):</strong> Runner-up, University Inter-faculty Elle</li>
-	<li><strong>Sports (Table Tennis & Chess):</strong> Competition School Level Champion</li>
-	<li><strong>Sports Organizer:</strong> Awarded at Dharmapala Vidyalaya Pannipitiya (2019)</li>
-	<li><strong>Prefect:</strong> Awarded at Homagama Central College (2016)</li>
-</ul>
-							</article>
+        <div class="card">
+            <h3>Data Analysis Internship</h3>
+            <p><strong>Codveda Technologies | Apr 2026 - May 2026</strong><br/>
+            Engaged in professional data analysis tasks and projects, expanding practical skills in statistical computing and data manipulation.</p>
+        </div>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<p>
-									<strong>Email:</strong> ulindu2001dvp@gmail.com<br />
-									<strong>Phone:</strong> +94 725422572<br />
-									<strong>Address:</strong> 13/2, Batawala, Padukka, Sri Lanka
-								</p>
+        <div class="card">
+            <h3>Volunteer Mathematics Teacher</h3>
+            <p><strong>Sasnaka Sansada (Ganitha Saviya Program) | Sep 2022 - Present</strong><br/>
+            Mentored over 1,000 G.C.E. (O/L) students across 35+ government schools through targeted problem-solving sessions, contributing to a 10% average increase in school-wide mathematics pass rates.</p>
+        </div>
 
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								</ul>
-							</article>
+        <div class="card">
+            <h3>Career Guidance Mentor</h3>
+            <p><strong>Sasnaka Sansada & USAID | 2022</strong><br/>
+            Provided strategic career and academic guidance to over 1,000 students, assisting them in identifying and planning appropriate future career pathways.</p>
+        </div>
+    </section>
 
-					</div>
+    <section id="skills">
+        <h2 class="section-title">Technical Tools & Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><i class="fas fa-chart-line" style="color: #4db8ff; font-size: 24px;"></i><br>R Studio</div>
+            <div class="skill-item"><i class="fab fa-python" style="color: #4db8ff; font-size: 24px;"></i><br>Python</div>
+            <div class="skill-item"><i class="fas fa-code" style="color: #4db8ff; font-size: 24px;"></i><br>MATLAB</div>
+            <div class="skill-item"><i class="fas fa-file-code" style="color: #4db8ff; font-size: 24px;"></i><br>LaTeX / TeXstudio</div>
+            <div class="skill-item"><i class="fas fa-network-wired" style="color: #4db8ff; font-size: 24px;"></i><br>Network Science</div>
+            <div class="skill-item"><i class="fas fa-brain" style="color: #4db8ff; font-size: 24px;"></i><br>Machine Learning</div>
+            <div class="skill-item"><i class="fas fa-users" style="color: #4db8ff; font-size: 24px;"></i><br>Leadership</div>
+            <div class="skill-item"><i class="fas fa-comments" style="color: #4db8ff; font-size: 24px;"></i><br>Teamwork</div>
+        </div>
+    </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Ulindu Samaradheera. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+    <section id="activity">
+        <h2 class="section-title">Leadership & Extra-Curricular</h2>
+        <div class="card">
+            <ul>
+                <li><strong>Student Executive Committee Member:</strong> Students Union of Rajarata University of Sri Lanka, Faculty of Applied Sciences (2023 - 2026)</li>
+                <li><strong>Chief Coordinator & CEO:</strong> Faculty of Applied Sciences Exhibition FAS Explorer 2025</li>
+                <li><strong>Speaker:</strong> IEEE Career Compass Sessions, Rajarata University of Sri Lanka, 2025</li>
+                <li><strong>Volunteer Member:</strong> Sasnaka Sansada Foundation (2022 - Present)</li>
+                <li><strong>Member:</strong> Industrial Mathematics Students' Association, RUSL (2023 - 2026)</li>
+                <li><strong>Member:</strong> NextGen Chemists Students' Association, RUSL (2024 - 2026)</li>
+                <li><strong>Member:</strong> IEEE Student Branch, RUSL (2023 - 2024)</li>
+                <li><strong>Active Participant:</strong> Sri Lanka Scout Association events and leadership roles (2014 - 2017)</li>
+                <li><strong>Awarded Prefect:</strong> Homagama Central College (2016)</li>
+            </ul>
+        </div>
+    </section>
 
-			</div>
+    <section id="sports">
+        <h2 class="section-title">Sports</h2>
+        <div class="card">
+            <ul>
+                <li><strong>Runner-up:</strong> University Inter-faculty Elle</li>
+                <li><strong>School Level Champion:</strong> Table Tennis and Chess Competition</li>
+                <li><strong>Awarded Sports Organizer:</strong> Dharmapala Vidyalaya Pannipitiya (2019)</li>
+            </ul>
+        </div>
+    </section>
 
-		<!-- BG -->
-			<div id="bg"></div>
+    <section id="reference">
+        <h2 class="section-title">References</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+            <div class="card" style="flex: 1; min-width: 280px;">
+                <h3 style="margin-top: 0;">Dr. Himasha Warnakulasooriya</h3>
+                <p>Postdoctoral Research Fellow,<br>UNSW, Australia.</p>
+                <p><i class="fas fa-phone-alt" style="color: #4db8ff;"></i> +61 416351458<br>
+                <i class="fas fa-envelope" style="color: #4db8ff;"></i> himashaharshani635@gmail.com</p>
+            </div>
+            <div class="card" style="flex: 1; min-width: 280px;">
+                <h3 style="margin-top: 0;">P. G. N. Dhanushka</h3>
+                <p>Medical Officer<br>No 6/2, Jayamawatha, Dangollawaththa, Nittabuwa.</p>
+                <p><i class="fas fa-phone-alt" style="color: #4db8ff;"></i> +94 0718619717<br>
+                <i class="fas fa-envelope" style="color: #4db8ff;"></i> nayanidhanushka088@gmail.com</p>
+            </div>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <section id="contact" style="border-bottom: none; margin-bottom: 50px;">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="card" style="text-align: center;">
+            <p>I am always open to discussing research projects, data analysis opportunities, and statistical modeling solutions. Feel free to reach out to me through any of the platforms below.</p>
+            
+            <div class="contact-grid">
+                <a href="https://wa.me/94725422572" target="_blank" class="contact-btn bg-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="tel:+94725422572" class="contact-btn bg-phone"><i class="fas fa-phone"></i> Mobile</a>
+                <a href="https://maps.google.com/?q=13/2+Batawala,+Padukka,+Sri+Lanka" target="_blank" class="contact-btn bg-map"><i class="fas fa-map-marker-alt"></i> Address</a>
+                <a href="mailto:ulindu2001dvp@gmail.com" class="contact-btn bg-phone" style="background: #D44638;"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://www.linkedin.com/in/ulindu-samaradheera-a5850a26b" target="_blank" class="contact-btn bg-linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="https://github.com/ulindusamaradheerarusl" target="_blank" class="contact-btn bg-github"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" target="_blank" class="contact-btn bg-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#" target="_blank" class="contact-btn bg-insta"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" target="_blank" class="contact-btn bg-x"><i class="fab fa-x-twitter"></i> X (Twitter)</a>
+                <a href="UE Samaradheera - My Resume.pdf" download class="contact-btn bg-cv"><i class="fas fa-file-alt"></i> CV</a>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <footer style="text-align: center; padding: 20px; background: #0a0a0a; border-top: 1px solid #333;">
+        <p>&copy; 2026 Ulindu Samaradheera. All Rights Reserved.</p>
+    </footer>
+
+</body>
 </html>
